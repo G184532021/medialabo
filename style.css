@@ -1,0 +1,36 @@
+/* General styles */
+
+html {
+    font-family: 'Helvetica neue', Arial, 'sans serif';
+    font-size: 16px;
+}
+
+h1 {
+    background-color: gold;
+    border: 4mm ridge rgba(212, 25, 0, 0.6);
+}
+
+.a1 {
+    background-color: rosybrown;
+    border: none;
+}
+
+h2 {
+    background-color: orange;
+    border: 4mm ridge rgba(212, 25, 0, 0.6);
+    
+}
+
+h4 {
+    background-color: skyblue;
+    border: thick double red;
+}
+ 
+a {
+    background-color: yellow;
+    transition: background-color .5s;
+}
+  
+a:hover {
+    background-color: red;
+}
