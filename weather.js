@@ -46,6 +46,21 @@ let data = {
 };
 
 ////////// 課題3-2 ここからプログラムを書こう
+let c1 = data.name
+let c = document.querySelector('span#c1');
+c.textContent = c1;
+
+let max1 = data.main.temp_max
+let max = document.querySelector('span#max1');
+max.textContent = max1;
+
+let min1 = data.main.temp_min
+let min = document.querySelector('span#min1');
+min.textContent = min1;
+
+
+
+
 console.log("都市名:" + data.name);
 console.log("最高気温:" + data.main.temp_max);
 console.log("最低気温:" + data.main.temp_min);
