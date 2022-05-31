@@ -64,3 +64,13 @@ min.textContent = min1;
 console.log("都市名:" + data.name);
 console.log("最高気温:" + data.main.temp_max);
 console.log("最低気温:" + data.main.temp_min);
+
+
+let b = document.querySelector('#print');
+b.addEventListener('click', greeting);
+let a;
+function greeting() {
+	let i = document.querySelector('input[name="a"]');
+	a = i.value;
+    
+}
