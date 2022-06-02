@@ -3,44 +3,56 @@
   <head>
     <meta charset="utf-8">
     <title>project</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <link rel="stylesheet" href="project.css">
   <script src="weather.js" defer></script>
   </head>
 
   <body>
     
-    <p>天気</p>
+    <h1>天気</h1>
 
-    <label for="a">都市名: </label>
+    <label for="a">検索コード: </label>
     <input type="text" name="a" size="10">
-    <button id="print">検索</button>
+    <button id="print" id="sendRequest">検索</button>
 
 <table>
-  <colgroup span="4"></colgroup>
+  <colgroup span="10"></colgroup>
   <tr>
     <th>都市名</th>
     <th><span id="c1"></span></th>
-    <th>b</th>
-    <th>c</th>
+    
+  </tr>
   <tr>
     <td>天気</td>
-    <td>晴れ</td>
-    <td>晴れ</td>
-    <td>晴れ</td>
+    <td><span id="w1"></span></td>
+    
+    
   </tr>
   <tr>
     <td>最高気温</td>
     <td><span id="max1"></span></td>
-    <td>1</td>
-    <td>1</td>
+    
   </tr>
-    <tr>
+  <tr>
     <td>最低気温</td>
     <td><span id="min1"></span></td>
-    <td>1</td>
-    <td>1</td>
+    
   </tr>
 </table>
-    <p></p>
+    <ul>
+        <li>360630 ... Cairo カイロ （エジプト）</li>
+        <li>524901 ... Moscow モスクワ （ロシア）</li>
+        <li>993800 ... Johannesburg ヨハネスブルク （南アフリカ）</li>
+        <li>1816670 ... Beijing 北京 （中華人民共和国）</li>
+        <li>1850147 ... Tokyo 東京 （日本）</li>
+        <li>1880252 ... Singapore シンガポール</li>
+        <li>2147714 ... Sydney シドニー （オーストラリア）</li>
+        <li>2643743 ... London ロンドン （イギリス）</li>
+        <li>2968815 ... Paris パリ （フランス）</li>
+        <li>3451189 ... Rio de Janeiro リオデジャネイロ （ブラジル）</li>
+        <li>5128581 ... New York ニューヨーク （アメリカ合衆国）</li>
+        <li>5368361 ... Los Angeles ロサンゼルス （アメリカ合衆国）</li>
+  </ul>
   </body>
 </html>

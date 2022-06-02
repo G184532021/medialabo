@@ -46,31 +46,75 @@ let data = {
 };
 
 ////////// 課題3-2 ここからプログラムを書こう
-let c1 = data.name
-let c = document.querySelector('span#c1');
-c.textContent = c1;
-
-let max1 = data.main.temp_max
-let max = document.querySelector('span#max1');
-max.textContent = max1;
-
-let min1 = data.main.temp_min
-let min = document.querySelector('span#min1');
-min.textContent = min1;
 
 
 
 
-console.log("都市名:" + data.name);
-console.log("最高気温:" + data.main.temp_max);
-console.log("最低気温:" + data.main.temp_min);
+
+//console.log("都市名:" + data.name);
+//console.log("最高気温:" + data.main.temp_max);
+//console.log("最低気温:" + data.main.temp_min);
 
 
 let b = document.querySelector('#print');
-b.addEventListener('click', greeting);
+b.addEventListener('click', greeting, sendRequest);
 let a;
 function greeting() {
 	let i = document.querySelector('input[name="a"]');
 	a = i.value;
-    
+  
+}
+
+//let d = document.querySelector('#sendRequest');
+b.addEventListener('click', sendRequest);
+
+
+// 通信を開始する処理
+function sendRequest() {
+	// URL を設定
+	let url = 'https://www.nishita-lab.org/web-contents/jsons/openweather/'+ a + '.json';
+
+	// 通信開始
+	axios.get(url)
+		.then(showResult)
+		.catch(showError)
+		.then(finish);
+}
+
+// 通信が成功した時の処理
+function showResult(resp) {
+	// サーバから送られてきたデータを出力
+	let data = resp.data;
+
+	// data が文字列型なら，オブジェクトに変換する
+	if (typeof data === 'string') {
+		data = JSON.parse(data);
+	}
+
+  let c1 = data.name
+  let c = document.querySelector('span#c1');
+  c.textContent = c1;
+
+  let w1 = data.weather[0].description
+  let w = document.querySelector('span#w1');
+  w.textContent = w1;
+
+  let max1 = data.main.temp_max
+  let max = document.querySelector('span#max1');
+  max.textContent = max1;
+
+  let min1 = data.main.temp_min
+  let min = document.querySelector('span#min1');
+  min.textContent = min1;
+
+}
+
+// 通信エラーが発生した時の処理
+function showError(err) {
+	console.log(err);
+}	
+
+// 通信の最後にいつも実行する処理
+function finish() {
+	console.log('Ajax 通信が終わりました');
 }

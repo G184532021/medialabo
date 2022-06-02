@@ -1,0 +1,16 @@
+table,td,th {
+    table-layout: auto;
+    width: 17%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+
+  }
+
+
+td {
+    text-align: center;
+}
+
+section {
+    display: flex;
+  }
